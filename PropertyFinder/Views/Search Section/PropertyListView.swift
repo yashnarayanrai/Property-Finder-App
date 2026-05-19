@@ -12,6 +12,7 @@ struct PropertyListView: View {
     @State private var showLogin = false
     @State private var goToCheckEmail = false
     @State private var enteredEmail = ""
+    @State private var goToDetail = false
     
     @Environment(\.dismiss) var dismiss
 //    @Environment(\.currentAppPhase) var appPhase
@@ -21,7 +22,6 @@ struct PropertyListView: View {
     @AppStorage("isUserLoggedIn") var isUserLoggedIn = false
     @AppStorage("isTermsAccepted") var isTermsAccepted = false
     
-    // 👉 TEST BYPASS ENGINE
     init() {
         // #if DEBUG ka matlab hai: Yeh code sirf tab chalega jab aap Xcode se Simulator par run karoge.
         // Jab aap app Store par live bhejoge, toh ye automatic band ho jayega.
@@ -76,8 +76,8 @@ struct PropertyListView: View {
             .padding(.horizontal, 5)
             
             
-            if isUserLoggedIn && isTermsAccepted{
-                
+            if isUserLoggedIn && isTermsAccepted {
+                                
                 VStack(spacing: 10){
                     
                     // Figma Style Progress Bar
@@ -102,8 +102,18 @@ struct PropertyListView: View {
                     
                     // Financial Row 3
                     FinancialRow(label: "Projected net yield", value: "5.11%")
+                    
+                    
+
                 }
                 .transition(.opacity.combined(with: .move(edge: .bottom)))
+                .onTapGesture {
+                    if isUserLoggedIn && isTermsAccepted {
+                        goToDetail = true
+                    }
+                }
+                
+
                 
             } else{
                 Button(action: {
@@ -152,6 +162,9 @@ struct PropertyListView: View {
             )
         }
         
+        .navigationDestination(isPresented: $goToDetail){
+            CapitalGrowth()
+        }
         
         .sheet(isPresented: $showLogin){
             LoginView { email in

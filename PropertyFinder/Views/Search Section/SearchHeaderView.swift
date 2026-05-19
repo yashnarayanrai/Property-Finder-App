@@ -26,28 +26,22 @@ struct SearchHeaderView: View {
                             Image(systemName: "magnifyingglass")
                             Text("Search")
                         }
-                        .padding()
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 8)
                         .foregroundColor(.white)
                         .background(Color.theme.primaryBlue)
                         .clipShape(Capsule())
                         
-                        Button(action: {showFilterTray=true}){
-                            HStack{
-                                Text("Filters")
-                                Image(systemName: "line.3.horizontal.decrease")
-                            }
-                            .padding()
-                            .background(Color.theme.white)
-                            .overlay(Capsule().stroke(Color.gray.opacity(0.5), lineWidth: 1))
-                        }
-                        .foregroundColor(Color.theme.primaryBlue)
                         
-                        Text("Fractional investment")
-                            .padding()
-                            .overlay(Capsule().stroke(Color.blue.opacity(0.5), lineWidth: 1))
+                        CapsuleButton(title: "Filters", iconName: "line.3.horizontal.decrease"){
+                            showFilterTray = true
+                        }
+                        
+                        CapsuleButton(title: "Fractional investment"){
+                            print("Fractional investment")
+                        }
                     }
                 }
-                .padding(.horizontal)
                 
                 VStack(alignment: .leading, spacing: 4){
                     Text("2,809 properties")
@@ -69,9 +63,8 @@ struct SearchHeaderView: View {
                             
                     }
                 }
-                .padding(.horizontal)
             }
-            .padding(.vertical, 10)
+            .padding()
             .sheet(isPresented: $showSortSheet){
                 SortTrayView(selectedSort: $currentSort)
                     .presentationDetents([.medium, .fraction(0.45)])
@@ -88,8 +81,8 @@ struct SearchHeaderView: View {
 }
 
 
-//struct SearchHeaderView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchHeaderView()
-//    }
-//}
+struct SearchHeaderView_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchHeaderView()
+    }
+}
