@@ -52,7 +52,7 @@ struct PaddingModifier: ViewModifier {
         } else {
             // 👉 Case 2: Agar user ne custom numbers diye hain ya default frame spacing h
             content
-                .padding(.horizontal, horizontal ?? 16)
+                .padding(.horizontal, horizontal ?? 12)
                 .padding(.vertical, vertical ?? 12)
         }
     }

@@ -163,7 +163,7 @@ struct PropertyListView: View {
         }
         
         .navigationDestination(isPresented: $goToDetail){
-            CapitalGrowth()
+            PropertyDetails()
         }
         
         .sheet(isPresented: $showLogin){

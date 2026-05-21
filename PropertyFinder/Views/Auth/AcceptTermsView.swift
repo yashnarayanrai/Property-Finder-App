@@ -166,6 +166,7 @@ struct TermsPDFReaderView: View {
     @State private var showFailedPopup = false
     @State private var isDownload = false
     @State private var scrollToBottom = false
+    @State private var hasScrolledToBottom = false
     
     @Environment(\.dismiss) var dismiss
     @Binding var goToCheckEmail: Bool
@@ -203,7 +204,8 @@ struct TermsPDFReaderView: View {
                 
                 PDFViewer(
                     pdfName: "Terms",
-                    scrollToButton: $scrollToBottom
+                    scrollToButton: $scrollToBottom,
+                    isAtBottom: $hasScrolledToBottom
                 )
                 .overlay(
                     Button(action: {
@@ -238,7 +240,7 @@ struct TermsPDFReaderView: View {
                     
             }
             .padding()
-            .disabled(showFailedPopup)
+            .disabled(!hasScrolledToBottom)
 
             
             //            Download Failed Popup

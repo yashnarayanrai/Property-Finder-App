@@ -41,18 +41,16 @@ struct MainRootView: View {
     
     var body: some View {
         
-        NavigationStack{
-            TabView(selection: $selectedTab){
-                ForEach(Tab.allCases, id: \.self){ tab in
-                    getTabView(for: tab)
-                        .tabItem{
-                            Label(tab.title, systemImage: tab.icon)
-                        }
-                        .tag(tab)
-                }
+        TabView(selection: $selectedTab){
+            ForEach(Tab.allCases, id: \.self){ tab in
+                getTabView(for: tab)
+                    .tabItem{
+                        Label(tab.title, systemImage: tab.icon)
+                    }
+                    .tag(tab)
             }
-            .tint(Color.theme.accent)
         }
+        .tint(Color.theme.accent)
 
     }
 
@@ -60,15 +58,25 @@ struct MainRootView: View {
     func getTabView(for tab: Tab) -> some View{
         switch tab{
         case .home:
-            HomeView()
+            NavigationStack{
+                HomeView()
+            }
         case .search:
-            SearchView()
+            NavigationStack{
+                SearchView()
+            }
         case .activity:
-            ActivityView()
+            NavigationStack{
+                ActivityView()
+            }
         case .insights:
-            InsightsView()
+            NavigationStack{
+                InsightsView()
+            }
         case .account:
-            AccountView()
+            NavigationStack{
+                AccountView()
+            }
         }
     }
 }
