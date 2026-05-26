@@ -46,11 +46,10 @@ struct PropertyDetails: View {
                     
                     InvestButtonComponent()
                     
-                
             }
             .background(Color.theme.backgroundBanner)
-            .ignoresSafeArea()
             .navigationBarHidden(true)
+            .ignoresSafeArea(edges: .top)
     }
 }
 

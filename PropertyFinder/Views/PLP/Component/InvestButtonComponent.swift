@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct InvestButtonComponent: View {
-    @State private var value: String = "" 
+    @State private var value: String = ""
+    @State private var isInvestNow: Bool = false
     
     var body: some View {
         HStack(spacing: 12){
@@ -32,10 +33,15 @@ struct InvestButtonComponent: View {
                     .stroke(Color.theme.primaryText, lineWidth: 1)
             )
             
-            ActionButton(title: "Invest Now", isPrimary: true, customHorizontalPadding: 16, action: {print("Invested")})
+            ActionButton(title: "Invest Now", isPrimary: true, customHorizontalPadding: 16, action: {
+                isInvestNow = true
+            })
         }
         .padding(16)
         .background(Color(UIColor.systemBackground))
+        .navigationDestination(isPresented: $isInvestNow){
+            BeforeYouInvest()
+        }
     }
 }
 

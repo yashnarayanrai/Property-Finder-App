@@ -13,6 +13,10 @@ struct PropertyFinderApp: App {
     
     @Environment(\.scenePhase) private var scenePhase
     
+    init() {
+            UINavigationBar.appearance().isHidden = true
+        }
+    
     var body: some Scene {
         WindowGroup {
             MainRootView()

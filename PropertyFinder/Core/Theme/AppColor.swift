@@ -31,6 +31,8 @@ struct ColorTheme {
     let gradiant1 = Color("Gradiant1")
     let gradiant2 = Color("Gradiant2")
     
+    let feedbackColor = Color("FeedbackColor")
+    
 }
 
 

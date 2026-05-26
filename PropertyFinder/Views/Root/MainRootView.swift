@@ -36,8 +36,11 @@ enum Tab: Int, CaseIterable {
     }
 }
 
+
 struct MainRootView: View {
     @State private var selectedTab: Tab = .search
+    
+    
     
     var body: some View {
         
@@ -61,18 +64,22 @@ struct MainRootView: View {
             NavigationStack{
                 HomeView()
             }
+            
         case .search:
             NavigationStack{
                 SearchView()
             }
+            
         case .activity:
             NavigationStack{
                 ActivityView()
             }
+            
         case .insights:
             NavigationStack{
                 InsightsView()
             }
+            
         case .account:
             NavigationStack{
                 AccountView()

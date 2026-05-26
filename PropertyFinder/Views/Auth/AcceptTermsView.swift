@@ -108,6 +108,8 @@ struct PDFViewer: UIViewRepresentable {
     let pdfName: String
     @Binding var scrollToButton: Bool
     
+    @Binding var isAtBottom: Bool
+    
     
     func makeUIView(context: Context) -> PDFView {
         let pdfView = PDFView()
@@ -120,6 +122,15 @@ struct PDFViewer: UIViewRepresentable {
         } else {
             print("❌ ERROR: \(pdfName).pdf file not found!")
         }
+        
+        NotificationCenter.default.addObserver(
+            forName: .PDFViewVisiblePagesChanged,
+            object: pdfView,
+            queue: .main
+        ) { _ in
+            checkIfScrolledToBottom(pdfView: pdfView)
+        }
+        
         return pdfView
     }
     
@@ -131,6 +142,8 @@ struct PDFViewer: UIViewRepresentable {
                     if totalPage > 0 {
                         if let lastPage = document.page(at: totalPage - 1){
                             uiView.go(to: lastPage)
+                            
+                            isAtBottom = true
                         }
                     }
                 }
@@ -139,22 +152,17 @@ struct PDFViewer: UIViewRepresentable {
         }
     }
     
-//    func updateUIView(_ uiView: PDFView, context: Context) {
-//        if scrollToButton {
-//            DispatchQueue.main.async {
-//                if let document = uiView.document {
-//                    let totalPages = document.pageCount
-//                    if totalPages > 0 {
-//                        // 👉 FIX: Last page index hamesha totalPages - 1 hota h (0-indexed base)
-//                        if let lastPage = document.page(at: totalPages - 1) {
-//                            uiView.go(to: lastPage)
-//                        }
-//                    }
-//                }
-//                scrollToButton = false
-//            }
-//        }
-//    }
+    private func checkIfScrolledToBottom(pdfView: PDFView) {
+        guard let document = pdfView.document,
+              let lastPage = document.page(at: document.pageCount - 1) else { return }
+        
+        // Agar visible (dikhne waale) pages ki list mein aakhri page shamil hai
+        if pdfView.visiblePages.contains(lastPage) {
+            DispatchQueue.main.async {
+                self.isAtBottom = true // Parent screen ka state true kar dega
+            }
+        }
+    }
 }
 
 
@@ -208,20 +216,24 @@ struct TermsPDFReaderView: View {
                     isAtBottom: $hasScrolledToBottom
                 )
                 .overlay(
-                    Button(action: {
-                        
-                        scrollToBottom = true
+                    Group{
+                        if !hasScrolledToBottom{
+                            Button(action: {
+                                
+                                scrollToBottom = true
 
-                    }){
-                        Image(systemName: "arrow.down")
-                            .font(.title3)
-                            .foregroundColor(Color.theme.black)
-                            .padding(14)
-                            .background(Color.theme.backgroundBanner)
-                            .clipShape(Circle())
-                            .shadow(radius: 4)
-                    }
-                    .padding(),
+                            }){
+                                Image(systemName: "arrow.down")
+                                    .font(.title3)
+                                    .foregroundColor(Color.theme.black)
+                                    .padding(14)
+                                    .background(Color.theme.backgroundBanner)
+                                    .clipShape(Circle())
+                                    .shadow(radius: 4)
+                            }
+                            .padding()
+                        }
+                    },
                     alignment: .bottomTrailing
                 )
                 
@@ -237,10 +249,11 @@ struct TermsPDFReaderView: View {
                     print("Accept Terms")
                     dismiss()
                 }
+                .disabled(!hasScrolledToBottom)
                     
             }
             .padding()
-            .disabled(!hasScrolledToBottom)
+            .disabled(showFailedPopup)
 
             
             //            Download Failed Popup
