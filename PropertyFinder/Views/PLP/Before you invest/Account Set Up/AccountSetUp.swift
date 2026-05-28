@@ -203,10 +203,10 @@ extension AccountSetUp{
             EmploymentDetails(currentCompletedStep: $currentCompletedStep, activeStep: $activeStep)
             
         case .identityVerification:
-            IdentityDetails(currentCompletedStep: $currentCompletedStep, activeStep: $activeStep)
+            UploadYourPassport(currentCompletedStep: $currentCompletedStep, activeStep: $activeStep)
             
         case .addressVerification:
-                    Text("Address Verification")
+            VerifyYourAddress(currentCompletedStep: $currentCompletedStep, activeStep: $activeStep)
             
         case .completed:
                 EmptyView()

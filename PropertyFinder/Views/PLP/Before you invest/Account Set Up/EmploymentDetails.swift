@@ -77,11 +77,9 @@ struct EmploymentDetails: View {
             
             headerSection
             
-            VStack(spacing: 24){
-                progressSection
-                
-                questionSection
-            }
+            progressSection
+            
+            questionSection
             
             Spacer()
         }
