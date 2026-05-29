@@ -10,6 +10,7 @@ import SwiftUI
 struct VerifyYourAddress: View {
     @State private var showInfoSheet = false
     @State private var showUploadSheet = false
+    @State private var showConfirmAddress = false
     
     @State private var currentQuestion: Int = 1
     @State private var quizAnswers: [Int : String] = [:]
@@ -67,6 +68,10 @@ struct VerifyYourAddress: View {
                 
                 if currentQuestion <= 2 {
                     optionQuestionView
+                    
+                } else if showConfirmAddress {
+                    confirmAddress
+                    
                 } else {
                     uploadSection
                 }
@@ -136,31 +141,25 @@ struct VerifyYourAddress: View {
                 
                 VStack{
                     VStack(alignment: .leading, spacing: 3){
-                        HStack(spacing: 8){
-                            Image(systemName: "photo")
-                            Text("Photos")
-                                .font(.body)
-                                .fontWeight(.regular)
-                        }
-                        .padding(12)
+                        uploadOptionRow(
+                            icon: "photo",
+                            title: "Photos"
+                        )
                         
-                        HStack(spacing: 8){
-                            Image(systemName: "camera")
-                            Text("Camera")
-                        }
-                        .padding(12)
+                        uploadOptionRow(
+                            icon: "camera",
+                            title: "Camera"
+                        )
                         
-                        HStack(spacing: 8){
-                            Image(systemName: "document")
-                            Text("File")
-                        }
-                        .padding(12)
+                        uploadOptionRow(
+                            icon: "doc",
+                            title: "Files"
+                        )
                         
-                        HStack(spacing: 8){
-                            Image(systemName: "folder")
-                            Text("Drive")
-                        }
-                        .padding(12)
+                        uploadOptionRow(
+                            icon: "folder",
+                            title: "Drive"
+                        )
                     }
                 }
                 .padding(.horizontal,16)
@@ -181,11 +180,10 @@ extension VerifyYourAddress {
         HStack(spacing: 16) {
             
             Button(action: {
-                //                handleBackNavigation()
-            }) {
-                Image(systemName: "arrow.backward")
-                    .foregroundColor(Color.theme.black)
-            }
+                dismiss()            }) {
+                    Image(systemName: "arrow.backward")
+                        .foregroundColor(Color.theme.black)
+                }
             
             Spacer()
             
@@ -235,7 +233,7 @@ extension VerifyYourAddress {
     }
     
     private var confirmAddress: some View {
-        VStack(spacing: 16){
+        VStack(alignment: .leading, spacing: 16){
             Text("Confirm address document")
                 .font(.title3).bold()
             
@@ -254,13 +252,17 @@ extension VerifyYourAddress {
             .cornerRadius(12)
             .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.theme.gray.opacity(0.3),lineWidth: 1))
             
-            VStack(spacing: 12){
+            VStack(alignment: .leading, spacing: 12){
                 Text("By submitting, you agree that:")
                     .font(.subheadline).bold()
                 criteriaSection
             }
             
-            ActionButton(title: "Submit", isPrimary: true, action: {})
+            ActionButton(title: "Submit", isPrimary: true, action: {
+                currentCompletedStep = 5
+                
+                dismiss()
+            })
         }
     }
     
@@ -292,6 +294,37 @@ extension VerifyYourAddress {
                 .fontWeight(.regular)
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
+        }
+    }
+    
+    private func uploadOptionRow(
+        icon: String,
+        title: String
+    ) -> some View {
+        
+        Button(action: {
+            
+            showUploadSheet = false
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                
+                showConfirmAddress = true
+            }
+            
+        }) {
+            
+            HStack(spacing: 12) {
+                
+                Image(systemName: icon)
+                    .font(.body)
+                
+                Text(title)
+                    .font(.body)
+                
+                Spacer()
+            }
+            .padding(14)
+            .foregroundColor(Color.theme.primaryText)
         }
     }
 }
