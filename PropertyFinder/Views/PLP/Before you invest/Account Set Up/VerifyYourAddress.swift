@@ -11,6 +11,12 @@ struct VerifyYourAddress: View {
     @State private var showInfoSheet = false
     @State private var showUploadSheet = false
     @State private var showConfirmAddress = false
+    @State private var showCheckingPopup = false
+    @State private var showReviewPopup = false
+    @State private var showSuccessPopup = false
+    @State private var showFailedPopup = false
+    
+    @State private var navigateToSearch = false
     
     @State private var currentQuestion: Int = 1
     @State private var quizAnswers: [Int : String] = [:]
@@ -82,7 +88,42 @@ struct VerifyYourAddress: View {
             
         }
         .padding(16)
-        .navigationBarBackButtonHidden(true)
+
+        
+        .overlay{
+            if showCheckingPopup {
+                CheckingYourAddressDocumentPopUp()
+            }
+            
+            if showReviewPopup {
+                AddressDocumentInReviewPopUp(isPresented: $showReviewPopup)
+            }
+            
+            if showSuccessPopup {
+                AddressDocumentSuccessfullyPopUp(
+                    isPresented: $showSuccessPopup
+                ){
+                    showFailedPopup = true
+                }
+            }
+            
+            if showFailedPopup {
+                CouldNotVerifyYourAddressPopUp(isPresented: $showFailedPopup, goToEmail: {
+                    
+                    currentCompletedStep = 5
+
+                    dismiss()
+                    
+                }, backToSearch: {
+                    showFailedPopup = false
+                    navigateToSearch = true
+                })
+            }
+        }
+        
+        .navigationDestination(isPresented: $navigateToSearch){
+            SearchView()
+        }
         
         .sheet(isPresented: $showInfoSheet){
             VStack{
@@ -170,6 +211,8 @@ struct VerifyYourAddress: View {
             .foregroundColor(Color.theme.primaryText)
             .presentationDetents([.height(300)])
         }
+        
+        .navigationBarBackButtonHidden(true)
     }
 }
 
@@ -259,9 +302,21 @@ extension VerifyYourAddress {
             }
             
             ActionButton(title: "Submit", isPrimary: true, action: {
-                currentCompletedStep = 5
                 
-                dismiss()
+                showCheckingPopup = true
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5){
+                    showCheckingPopup = false
+                    
+                    showReviewPopup = true
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5){
+                        showReviewPopup = false
+                        
+                        showSuccessPopup = true
+                    }
+                }
+                
             })
         }
     }
@@ -408,6 +463,7 @@ extension VerifyYourAddress {
         }
     }
 }
+
 
 struct VerifyYourAddress_Previews: PreviewProvider {
     static var previews: some View {
