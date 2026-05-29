@@ -10,6 +10,10 @@
 		131FFAE92FB6E0AF000824AB /* AcceptTermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131FFAE82FB6E0AE000824AB /* AcceptTermsView.swift */; };
 		132460522FBEC49600DC67CB /* LeasingStrategyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132460512FBEC49600DC67CB /* LeasingStrategyComponent.swift */; };
 		132460542FBEDB8F00DC67CB /* FinancialsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132460532FBEDB8F00DC67CB /* FinancialsComponent.swift */; };
+		13263FB12FC987C100F80E34 /* CheckingYourAddressDocumentPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13263FB02FC987C100F80E34 /* CheckingYourAddressDocumentPopUp.swift */; };
+		13263FB32FC9882C00F80E34 /* AddressDocumentInReviewPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13263FB22FC9882C00F80E34 /* AddressDocumentInReviewPopUp.swift */; };
+		13263FB52FC9886E00F80E34 /* AddressDocumentSuccessfullyPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13263FB42FC9886E00F80E34 /* AddressDocumentSuccessfullyPopUp.swift */; };
+		13263FB72FC988C100F80E34 /* CouldNotVerifyYourAddressPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13263FB62FC988C100F80E34 /* CouldNotVerifyYourAddressPopUp.swift */; };
 		134115182FB599DC000DEE9A /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134115172FB599DC000DEE9A /* ActionButton.swift */; };
 		1341151A2FB5A3FC000DEE9A /* CommunityCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134115192FB5A3FC000DEE9A /* CommunityCardView.swift */; };
 		1345262E2FB30DC200BB4027 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1345262D2FB30DC200BB4027 /* LoginView.swift */; };
@@ -82,6 +86,10 @@
 		131FFAE82FB6E0AE000824AB /* AcceptTermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptTermsView.swift; sourceTree = "<group>"; };
 		132460512FBEC49600DC67CB /* LeasingStrategyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeasingStrategyComponent.swift; sourceTree = "<group>"; };
 		132460532FBEDB8F00DC67CB /* FinancialsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialsComponent.swift; sourceTree = "<group>"; };
+		13263FB02FC987C100F80E34 /* CheckingYourAddressDocumentPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckingYourAddressDocumentPopUp.swift; sourceTree = "<group>"; };
+		13263FB22FC9882C00F80E34 /* AddressDocumentInReviewPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressDocumentInReviewPopUp.swift; sourceTree = "<group>"; };
+		13263FB42FC9886E00F80E34 /* AddressDocumentSuccessfullyPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressDocumentSuccessfullyPopUp.swift; sourceTree = "<group>"; };
+		13263FB62FC988C100F80E34 /* CouldNotVerifyYourAddressPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouldNotVerifyYourAddressPopUp.swift; sourceTree = "<group>"; };
 		134115172FB599DC000DEE9A /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		134115192FB5A3FC000DEE9A /* CommunityCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCardView.swift; sourceTree = "<group>"; };
 		1345262B2FB30C7500BB4027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -163,9 +171,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13263FAF2FC9879B00F80E34 /* PopupView */ = {
+			isa = PBXGroup;
+			children = (
+				13263FB02FC987C100F80E34 /* CheckingYourAddressDocumentPopUp.swift */,
+				13263FB22FC9882C00F80E34 /* AddressDocumentInReviewPopUp.swift */,
+				13263FB42FC9886E00F80E34 /* AddressDocumentSuccessfullyPopUp.swift */,
+				13263FB62FC988C100F80E34 /* CouldNotVerifyYourAddressPopUp.swift */,
+			);
+			path = PopupView;
+			sourceTree = "<group>";
+		};
 		134115142FB59811000DEE9A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				13263FAF2FC9879B00F80E34 /* PopupView */,
 				134115172FB599DC000DEE9A /* ActionButton.swift */,
 				134115192FB5A3FC000DEE9A /* CommunityCardView.swift */,
 				1345695F2FBC49B200C2FD20 /* SelectionChip.swift */,
@@ -528,6 +548,7 @@
 				13528E632FB1B6D100393303 /* PropertyFinder.xcdatamodeld in Sources */,
 				13EC69092FBB13DD00AA929F /* SortTrayView.swift in Sources */,
 				1346AE392FB1F27800A1F57F /* PropertyListView.swift in Sources */,
+				13263FB12FC987C100F80E34 /* CheckingYourAddressDocumentPopUp.swift in Sources */,
 				13544B022FBDC3240062EEB7 /* WhyDubaiComponent.swift in Sources */,
 				13528E902FB1BFA200393303 /* AppColor.swift in Sources */,
 				13528E602FB1B6D100393303 /* Persistence.swift in Sources */,
@@ -537,6 +558,8 @@
 				1355A84B2FBEEBB600E3F4F7 /* ExitOptions.swift in Sources */,
 				138D8A762FC8256600010022 /* VerifyYourAddress.swift in Sources */,
 				13528EA02FB1D01E00393303 /* AccountView.swift in Sources */,
+				13263FB52FC9886E00F80E34 /* AddressDocumentSuccessfullyPopUp.swift in Sources */,
+				13263FB72FC988C100F80E34 /* CouldNotVerifyYourAddressPopUp.swift in Sources */,
 				132460542FBEDB8F00DC67CB /* FinancialsComponent.swift in Sources */,
 				13544B002FBDABFE0062EEB7 /* InvestmentCalculatorComponent.swift in Sources */,
 				13EC690B2FBB1AC600AA929F /* FilterView.swift in Sources */,
@@ -560,6 +583,7 @@
 				1345262E2FB30DC200BB4027 /* LoginView.swift in Sources */,
 				1355A8552FBF17B600E3F4F7 /* FinancialRowDetailComponent.swift in Sources */,
 				13528E962FB1C9DD00393303 /* MainRootView.swift in Sources */,
+				13263FB32FC9882C00F80E34 /* AddressDocumentInReviewPopUp.swift in Sources */,
 				13855C632FC06F1B003E3E36 /* mapView.swift in Sources */,
 				131FFAE92FB6E0AF000824AB /* AcceptTermsView.swift in Sources */,
 				13528E572FB1B6CE00393303 /* PropertyFinderApp.swift in Sources */,
