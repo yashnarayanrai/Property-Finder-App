@@ -20,7 +20,7 @@ struct ConfirmInvestment: View {
     
     var body: some View {
         VStack(spacing: 0){
-            headerSection
+            AppHeaderView(title: "Confirm Investment", backAction: { dismiss() })
             
             ScrollView(showsIndicators: false){
                 detailSection
@@ -43,30 +43,6 @@ struct ConfirmInvestment: View {
 }
 
 extension ConfirmInvestment {
-    private var headerSection: some View {
-        
-        HStack{
-            
-            Button(action: {
-                dismiss()
-            }) {
-                Image(systemName: "arrow.backward")
-                    .foregroundColor(Color.theme.black)
-            }
-            
-            Spacer()
-            
-            Text("Confirm Investment")
-                .font(.title3.bold())
-                .foregroundColor(Color.theme.primaryText)
-            
-            Spacer()
-            
-            Image(systemName: "arrow.backward")
-                .opacity(0)
-        }
-        .padding(16)
-    }
     
     private var buttonSection: some View {
         VStack(spacing: 16){
@@ -161,7 +137,9 @@ extension ConfirmInvestment {
                         .frame(maxWidth: .infinity, maxHeight: 48)
                         .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.theme.gray.opacity(0.3), lineWidth: 1))
                     
-                    Button(action: { initialInvestment += 500
+                    Button(action: { if initialInvestment < 50000 {
+                        initialInvestment += 500
+                    }
                     }){
                         Image(systemName: "plus")
                             .font(.subheadline).bold()
@@ -187,13 +165,11 @@ extension ConfirmInvestment {
                         .font(.footnote)
                         .fontWeight(.regular)
                     +
+                    
                     Text("Learn more")
                         .font(.footnote)
                         .fontWeight(.semibold)
                         .foregroundColor(Color.theme.primaryBlue)
-                    //                        .onTapGesture {
-                    //                            showLearnMoreSheet = true
-                    //                        }
                 )
                 
             }
@@ -239,11 +215,14 @@ extension ConfirmInvestment {
                         .underline()
                         .foregroundColor(Color.theme.primaryBlue)
                 )
+                .foregroundColor(Color.theme.primaryText)
                 
                 ActionButton(title: "I agree", isPrimary: true, action: {
                     toContinuePayment = false
                     
-                    isAgree = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                            isAgree = true
+                        }
                     
                 })
             }

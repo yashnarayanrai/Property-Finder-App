@@ -12,6 +12,7 @@
 		132460522FBEC49600DC67CB /* LeasingStrategyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132460512FBEC49600DC67CB /* LeasingStrategyComponent.swift */; };
 		132460542FBEDB8F00DC67CB /* FinancialsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132460532FBEDB8F00DC67CB /* FinancialsComponent.swift */; };
 		133732652FCD79DF00097882 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133732642FCD79DE00097882 /* Payment.swift */; };
+		133732672FCDB7F600097882 /* AppHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133732662FCDB7F600097882 /* AppHeaderView.swift */; };
 		134115182FB599DC000DEE9A /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134115172FB599DC000DEE9A /* ActionButton.swift */; };
 		1341151A2FB5A3FC000DEE9A /* CommunityCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134115192FB5A3FC000DEE9A /* CommunityCardView.swift */; };
 		1345262E2FB30DC200BB4027 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1345262D2FB30DC200BB4027 /* LoginView.swift */; };
@@ -86,6 +87,7 @@
 		132460512FBEC49600DC67CB /* LeasingStrategyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeasingStrategyComponent.swift; sourceTree = "<group>"; };
 		132460532FBEDB8F00DC67CB /* FinancialsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialsComponent.swift; sourceTree = "<group>"; };
 		133732642FCD79DE00097882 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		133732662FCDB7F600097882 /* AppHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHeaderView.swift; sourceTree = "<group>"; };
 		134115172FB599DC000DEE9A /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		134115192FB5A3FC000DEE9A /* CommunityCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCardView.swift; sourceTree = "<group>"; };
 		1345262B2FB30C7500BB4027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				1345695F2FBC49B200C2FD20 /* SelectionChip.swift */,
 				134569612FBC4E4600C2FD20 /* CapsuleButton.swift */,
 				13A18D412FC4424300409BA1 /* SegmentedProgressBar.swift */,
+				133732662FCDB7F600097882 /* AppHeaderView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				13544B002FBDABFE0062EEB7 /* InvestmentCalculatorComponent.swift in Sources */,
 				13EC690B2FBB1AC600AA929F /* FilterView.swift in Sources */,
 				1355A8532FBF04D700E3F4F7 /* ImageDetailComponent.swift in Sources */,
+				133732672FCDB7F600097882 /* AppHeaderView.swift in Sources */,
 				13BD7E3A2FC033E600B1BBDB /* AccountSetUp.swift in Sources */,
 				13BD7E372FC02ADE00B1BBDB /* BeforeYouInvest.swift in Sources */,
 				13528E982FB1CFDF00393303 /* HomeView.swift in Sources */,
