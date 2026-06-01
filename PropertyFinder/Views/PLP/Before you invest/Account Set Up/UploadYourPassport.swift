@@ -75,6 +75,7 @@ struct UploadYourPassport: View {
                 .padding(16)
                 Spacer(minLength: 0)
             }
+            .background(Color.theme.backgroundBanner)
             .foregroundColor(Color.theme.primaryText)
             .presentationDetents([.height(240)])
         }

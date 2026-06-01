@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct InvestButtonComponent: View {
-    @State private var value: String = ""
-    @State private var isInvestNow: Bool = false
+    @State private var value: String = ""    
+    let onInvestTap: () -> Void
     
     var body: some View {
         HStack(spacing: 12){
@@ -34,19 +34,17 @@ struct InvestButtonComponent: View {
             )
             
             ActionButton(title: "Invest Now", isPrimary: true, customHorizontalPadding: 16, action: {
-                isInvestNow = true
+                onInvestTap()
             })
         }
         .padding(16)
         .background(Color(UIColor.systemBackground))
-        .navigationDestination(isPresented: $isInvestNow){
-            BeforeYouInvest()
-        }
+        
     }
 }
 
 struct InvestButtonComponent_Previews: PreviewProvider {
     static var previews: some View {
-        InvestButtonComponent()
+        InvestButtonComponent(onInvestTap: {})
     }
 }

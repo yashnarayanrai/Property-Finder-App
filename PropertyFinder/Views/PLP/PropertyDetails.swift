@@ -8,48 +8,52 @@
 import SwiftUI
 
 struct PropertyDetails: View {
-    
-    @Environment(\.dismiss)
-    var dismiss
+    @Environment(\.dismiss) var dismiss
+    @State private var isInvestNow = false
     
     var body: some View {
-            ScrollView(showsIndicators: false){            
-                Group{
-                    ImageComponent()
-                    
-                    ImageDetailComponent()
-                    
-                    FinancialRowDetailComponent()
-                    
-                    HowItWorkComponent()
-                    
-                    CapitalGrowthComponent()
-                                        
-                    InvestmentCalculatorComponent()
-                    
-                    LeasingStrategyComponent()
-                    
-                    FinancialsComponent()
-                    
-                    ExitOptions()
-                }
-                    
-                    FundingTimelineComponent()
-                    
-                    WhyDubaiComponent()
-                    
-                    TheBuildingComponent()
-                    
-                    DocumentsComponent()
-                    
-                    StakeAcademyComponent()
-                    
-                    InvestButtonComponent()
-                    
+        ScrollView(showsIndicators: false){
+            Group{
+                ImageComponent()
+                
+                ImageDetailComponent()
+                
+                FinancialRowDetailComponent()
+                
+                HowItWorkComponent()
+                
+                CapitalGrowthComponent()
+                
+                InvestmentCalculatorComponent()
+                
+                LeasingStrategyComponent()
+                
+                FinancialsComponent()
+                
+                ExitOptions()
             }
-            .background(Color.theme.backgroundBanner)
-            .navigationBarHidden(true)
-            .ignoresSafeArea(edges: .top)
+            
+            FundingTimelineComponent()
+            
+            WhyDubaiComponent()
+            
+            TheBuildingComponent()
+            
+            DocumentsComponent()
+            
+            StakeAcademyComponent()
+            
+            InvestButtonComponent{
+                isInvestNow = true
+            }
+            
+        }
+        .background(Color.theme.backgroundBanner)
+        .navigationBarHidden(true)
+        .ignoresSafeArea(edges: .top)
+        .navigationDestination(isPresented: $isInvestNow){
+            BeforeYouInvest()
+        }
     }
 }
 

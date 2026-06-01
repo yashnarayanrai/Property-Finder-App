@@ -209,7 +209,7 @@ extension AccountSetUp{
             VerifyYourAddress(currentCompletedStep: $currentCompletedStep, activeStep: $activeStep)
             
         case .completed:
-                EmptyView()
+                ConfirmInvestment()
         }
     }
 }

@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		131251E02FCD5F0B0085B782 /* ConfirmInvestment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131251DF2FCD5F0B0085B782 /* ConfirmInvestment.swift */; };
 		131FFAE92FB6E0AF000824AB /* AcceptTermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131FFAE82FB6E0AE000824AB /* AcceptTermsView.swift */; };
 		132460522FBEC49600DC67CB /* LeasingStrategyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132460512FBEC49600DC67CB /* LeasingStrategyComponent.swift */; };
 		132460542FBEDB8F00DC67CB /* FinancialsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132460532FBEDB8F00DC67CB /* FinancialsComponent.swift */; };
+		133732652FCD79DF00097882 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133732642FCD79DE00097882 /* Payment.swift */; };
 		134115182FB599DC000DEE9A /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134115172FB599DC000DEE9A /* ActionButton.swift */; };
 		1341151A2FB5A3FC000DEE9A /* CommunityCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134115192FB5A3FC000DEE9A /* CommunityCardView.swift */; };
 		1345262E2FB30DC200BB4027 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1345262D2FB30DC200BB4027 /* LoginView.swift */; };
@@ -79,9 +81,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		131251DF2FCD5F0B0085B782 /* ConfirmInvestment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmInvestment.swift; sourceTree = "<group>"; };
 		131FFAE82FB6E0AE000824AB /* AcceptTermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptTermsView.swift; sourceTree = "<group>"; };
 		132460512FBEC49600DC67CB /* LeasingStrategyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeasingStrategyComponent.swift; sourceTree = "<group>"; };
 		132460532FBEDB8F00DC67CB /* FinancialsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialsComponent.swift; sourceTree = "<group>"; };
+		133732642FCD79DE00097882 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		134115172FB599DC000DEE9A /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		134115192FB5A3FC000DEE9A /* CommunityCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCardView.swift; sourceTree = "<group>"; };
 		1345262B2FB30C7500BB4027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -189,8 +193,10 @@
 			isa = PBXGroup;
 			children = (
 				13544AFD2FBDAAE40062EEB7 /* PropertyDetails.swift */,
+				131251DF2FCD5F0B0085B782 /* ConfirmInvestment.swift */,
 				13544AFC2FBDA7720062EEB7 /* Component */,
 				13BD7E352FC02AA700B1BBDB /* Before you invest */,
+				133732642FCD79DE00097882 /* Payment.swift */,
 			);
 			path = PLP;
 			sourceTree = "<group>";
@@ -527,6 +533,7 @@
 				1341151A2FB5A3FC000DEE9A /* CommunityCardView.swift in Sources */,
 				13528E632FB1B6D100393303 /* PropertyFinder.xcdatamodeld in Sources */,
 				13EC69092FBB13DD00AA929F /* SortTrayView.swift in Sources */,
+				131251E02FCD5F0B0085B782 /* ConfirmInvestment.swift in Sources */,
 				1346AE392FB1F27800A1F57F /* PropertyListView.swift in Sources */,
 				13544B022FBDC3240062EEB7 /* WhyDubaiComponent.swift in Sources */,
 				13528E902FB1BFA200393303 /* AppColor.swift in Sources */,
@@ -552,6 +559,7 @@
 				1346AE372FB1E65900A1F57F /* SearchHeaderView.swift in Sources */,
 				1355A8572FBF188A00E3F4F7 /* CapitalGrowthComponent.swift in Sources */,
 				13544AFE2FBDAAE40062EEB7 /* PropertyDetails.swift in Sources */,
+				133732652FCD79DF00097882 /* Payment.swift in Sources */,
 				132460522FBEC49600DC67CB /* LeasingStrategyComponent.swift in Sources */,
 				13A18D3E2FC42AA800409BA1 /* EmploymentDetails.swift in Sources */,
 				1355A84D2FBEF3FF00E3F4F7 /* TheBuildingComponent.swift in Sources */,
