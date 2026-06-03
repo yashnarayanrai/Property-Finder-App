@@ -45,7 +45,7 @@ struct SearchView: View {
             }
             Spacer()
         }
-        
+        .navigationBarBackButtonHidden(true)
     }
 }
 
