@@ -12,21 +12,18 @@ final class ReceiptViewModel: ObservableObject {
     @Published var viewPortfolio = false
     @Published var goToSearch = false
     
-    let amountPaid: String
-    let cashBackEarned: String
-    let referenceNumber: String
-    let paymentMethod: String
+    let receipt: ReceiptModel
     
     init(
-        amountPaid: String = "5,000 AED",
-        cashBackEarned: String = "80 AED",
-        referenceNumber: String = "000085752267",
-        paymentMethod: String = "Apple Pay"
+        
+        receipt: ReceiptModel = ReceiptModel (
+            amountPaid: "5,000 AED",
+            cashBackEarned: "80 AED",
+            referenceNumber: "000085752267",
+            paymentMethod: "Apple Pay"
+        )
     ) {
-        self.amountPaid = amountPaid
-        self.cashBackEarned = cashBackEarned
-        self.referenceNumber = referenceNumber
-        self.paymentMethod = paymentMethod
+        self.receipt = receipt
     }
     
     func didTapViewPortfolio() {
