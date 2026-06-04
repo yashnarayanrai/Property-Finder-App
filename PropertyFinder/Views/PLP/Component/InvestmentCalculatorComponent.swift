@@ -101,7 +101,10 @@ struct InvestmentCalculatorComponent: View {
                         .frame(maxWidth: .infinity, maxHeight: 48)
                         .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.theme.gray.opacity(0.3), lineWidth: 1))
                     
-                    Button(action: {if initialInvestment > 500 { initialInvestment -= 500 }}){
+                    Button(action: { if initialInvestment < 50000 {
+                        initialInvestment += 500
+                    }}
+                    ){
                         Image(systemName: "plus")
                             .font(.subheadline).bold()
                             .foregroundColor(Color.theme.black)

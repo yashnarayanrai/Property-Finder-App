@@ -32,6 +32,9 @@ final class PaymentViewModel: ObservableObject {
     }
     
     func addCard() {
+        
+        
+        
         guard let card = addCardUseCase.execute(
             cardNumber: cardNumber,
             expiryDate: expiryDate,

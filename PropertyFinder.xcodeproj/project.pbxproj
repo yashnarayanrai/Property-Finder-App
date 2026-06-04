@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130C5AF12FD17D500026AE25 /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130C5AF02FD17D500026AE25 /* CalculatorModel.swift */; };
+		130C5AF32FD17DCF0026AE25 /* PortfolioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130C5AF22FD17DCF0026AE25 /* PortfolioModel.swift */; };
+		130C5AF52FD17E300026AE25 /* InvestmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130C5AF42FD17E300026AE25 /* InvestmentModel.swift */; };
+		130C5AF82FD17EFA0026AE25 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130C5AF72FD17EFA0026AE25 /* DashboardViewModel.swift */; };
+		130C5AFA2FD1829D0026AE25 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130C5AF92FD1829D0026AE25 /* CalculatorViewModel.swift */; };
 		13105FCA2FD01B65007FABB4 /* ReceiptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13105FC92FD01B65007FABB4 /* ReceiptModel.swift */; };
 		13105FCC2FD03C68007FABB4 /* ReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13105FCB2FD03C68007FABB4 /* ReceiptViewModel.swift */; };
 		131251E02FCD5F0B0085B782 /* ConfirmInvestment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131251DF2FCD5F0B0085B782 /* ConfirmInvestment.swift */; };
+		131401CB2FD14531009756E2 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131401CA2FD14531009756E2 /* PortfolioView.swift */; };
 		131FFAE92FB6E0AF000824AB /* AcceptTermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131FFAE82FB6E0AE000824AB /* AcceptTermsView.swift */; };
 		132460522FBEC49600DC67CB /* LeasingStrategyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132460512FBEC49600DC67CB /* LeasingStrategyComponent.swift */; };
 		132460542FBEDB8F00DC67CB /* FinancialsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132460532FBEDB8F00DC67CB /* FinancialsComponent.swift */; };
@@ -66,9 +72,10 @@
 		13C88B2F2FB431C4002B5E64 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13C88B2E2FB431C3002B5E64 /* GoogleService-Info.plist */; };
 		13C88B312FB443CB002B5E64 /* CheckEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C88B302FB443CB002B5E64 /* CheckEmailView.swift */; };
 		13CB68552FB70CDA00E1F1BF /* Terms.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 13CB68542FB70CDA00E1F1BF /* Terms.pdf */; };
+		13E241682FD15EAA0067F96B /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E241672FD15EAA0067F96B /* DashboardView.swift */; };
+		13E2416A2FD163830067F96B /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E241692FD163830067F96B /* CalculatorView.swift */; };
 		13EC69092FBB13DD00AA929F /* SortTrayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EC69082FBB13DD00AA929F /* SortTrayView.swift */; };
 		13EC690B2FBB1AC600AA929F /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EC690A2FBB1AC500AA929F /* FilterView.swift */; };
-		13EEB0EF2FD04A3300AC0C86 /* AddNewDebitCardSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EEB0EE2FD04A3300AC0C86 /* AddNewDebitCardSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,9 +96,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		130C5AF02FD17D500026AE25 /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
+		130C5AF22FD17DCF0026AE25 /* PortfolioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioModel.swift; sourceTree = "<group>"; };
+		130C5AF42FD17E300026AE25 /* InvestmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentModel.swift; sourceTree = "<group>"; };
+		130C5AF72FD17EFA0026AE25 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		130C5AF92FD1829D0026AE25 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 		13105FC92FD01B65007FABB4 /* ReceiptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptModel.swift; sourceTree = "<group>"; };
 		13105FCB2FD03C68007FABB4 /* ReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewModel.swift; sourceTree = "<group>"; };
 		131251DF2FCD5F0B0085B782 /* ConfirmInvestment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmInvestment.swift; sourceTree = "<group>"; };
+		131401CA2FD14531009756E2 /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		131FFAE82FB6E0AE000824AB /* AcceptTermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptTermsView.swift; sourceTree = "<group>"; };
 		132460512FBEC49600DC67CB /* LeasingStrategyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeasingStrategyComponent.swift; sourceTree = "<group>"; };
 		132460532FBEDB8F00DC67CB /* FinancialsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialsComponent.swift; sourceTree = "<group>"; };
@@ -153,9 +166,10 @@
 		13C88B2E2FB431C3002B5E64 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		13C88B302FB443CB002B5E64 /* CheckEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailView.swift; sourceTree = "<group>"; };
 		13CB68542FB70CDA00E1F1BF /* Terms.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Terms.pdf; path = ../../../../../anandnarayanrai/Downloads/Terms.pdf; sourceTree = "<group>"; };
+		13E241672FD15EAA0067F96B /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		13E241692FD163830067F96B /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		13EC69082FBB13DD00AA929F /* SortTrayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortTrayView.swift; sourceTree = "<group>"; };
 		13EC690A2FBB1AC500AA929F /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
-		13EEB0EE2FD04A3300AC0C86 /* AddNewDebitCardSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewDebitCardSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +197,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		130C5AEF2FD17D2C0026AE25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				130C5AF02FD17D500026AE25 /* CalculatorModel.swift */,
+				130C5AF22FD17DCF0026AE25 /* PortfolioModel.swift */,
+				130C5AF42FD17E300026AE25 /* InvestmentModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		130C5AF62FD17EE20026AE25 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				130C5AF72FD17EFA0026AE25 /* DashboardViewModel.swift */,
+				130C5AF92FD1829D0026AE25 /* CalculatorViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		131401C92FD1450C009756E2 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				130C5AF62FD17EE20026AE25 /* ViewModel */,
+				130C5AEF2FD17D2C0026AE25 /* Model */,
+				13E241662FD15DF50067F96B /* View */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
 		134115142FB59811000DEE9A /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +389,7 @@
 		13528E912FB1C80500393303 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				131401C92FD1450C009756E2 /* Dashboard */,
 				138F18D42FCEE49E00BC19A1 /* Payment */,
 				134569632FBC7B9E00C2FD20 /* PLP */,
 				1345262C2FB30DA900BB4027 /* Auth */,
@@ -430,7 +474,6 @@
 			isa = PBXGroup;
 			children = (
 				133732642FCD79DE00097882 /* PaymentView.swift */,
-				13EEB0EE2FD04A3300AC0C86 /* AddNewDebitCardSheet.swift */,
 				138F18E12FD006DA00BC19A1 /* ReceiptView.swift */,
 			);
 			path = View;
@@ -454,6 +497,16 @@
 				138D8A752FC8256600010022 /* VerifyYourAddress.swift */,
 			);
 			path = "Account Set Up";
+			sourceTree = "<group>";
+		};
+		13E241662FD15DF50067F96B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				131401CA2FD14531009756E2 /* PortfolioView.swift */,
+				13E241672FD15EAA0067F96B /* DashboardView.swift */,
+				13E241692FD163830067F96B /* CalculatorView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -602,7 +655,6 @@
 				138F18E22FD006DA00BC19A1 /* ReceiptView.swift in Sources */,
 				13544B022FBDC3240062EEB7 /* WhyDubaiComponent.swift in Sources */,
 				13528E902FB1BFA200393303 /* AppColor.swift in Sources */,
-				13EEB0EF2FD04A3300AC0C86 /* AddNewDebitCardSheet.swift in Sources */,
 				13528E602FB1B6D100393303 /* Persistence.swift in Sources */,
 				1355A84F2FBEFE3E00E3F4F7 /* InvestButtonComponent.swift in Sources */,
 				13528E9A2FB1CFEE00393303 /* SearchView.swift in Sources */,
@@ -610,7 +662,9 @@
 				1355A84B2FBEEBB600E3F4F7 /* ExitOptions.swift in Sources */,
 				138D8A762FC8256600010022 /* VerifyYourAddress.swift in Sources */,
 				13528EA02FB1D01E00393303 /* AccountView.swift in Sources */,
+				13E241682FD15EAA0067F96B /* DashboardView.swift in Sources */,
 				132460542FBEDB8F00DC67CB /* FinancialsComponent.swift in Sources */,
+				130C5AF82FD17EFA0026AE25 /* DashboardViewModel.swift in Sources */,
 				13544B002FBDABFE0062EEB7 /* InvestmentCalculatorComponent.swift in Sources */,
 				13EC690B2FBB1AC600AA929F /* FilterView.swift in Sources */,
 				1355A8532FBF04D700E3F4F7 /* ImageDetailComponent.swift in Sources */,
@@ -619,6 +673,7 @@
 				13BD7E372FC02ADE00B1BBDB /* BeforeYouInvest.swift in Sources */,
 				13528E982FB1CFDF00393303 /* HomeView.swift in Sources */,
 				1355A8512FBF03A400E3F4F7 /* ImageComponent.swift in Sources */,
+				130C5AF32FD17DCF0026AE25 /* PortfolioModel.swift in Sources */,
 				134115182FB599DC000DEE9A /* ActionButton.swift in Sources */,
 				13528E9C2FB1D00100393303 /* ActivityView.swift in Sources */,
 				138D8A742FC80A8500010022 /* UploadYourPassport.swift in Sources */,
@@ -629,15 +684,20 @@
 				13544AFE2FBDAAE40062EEB7 /* PropertyDetails.swift in Sources */,
 				133732652FCD79DF00097882 /* PaymentView.swift in Sources */,
 				13105FCC2FD03C68007FABB4 /* ReceiptViewModel.swift in Sources */,
+				130C5AF12FD17D500026AE25 /* CalculatorModel.swift in Sources */,
 				132460522FBEC49600DC67CB /* LeasingStrategyComponent.swift in Sources */,
 				13A18D3E2FC42AA800409BA1 /* EmploymentDetails.swift in Sources */,
 				1355A84D2FBEF3FF00E3F4F7 /* TheBuildingComponent.swift in Sources */,
+				13E2416A2FD163830067F96B /* CalculatorView.swift in Sources */,
 				13A18D422FC4424300409BA1 /* SegmentedProgressBar.swift in Sources */,
 				13528E9E2FB1D01100393303 /* InsightsView.swift in Sources */,
+				131401CB2FD14531009756E2 /* PortfolioView.swift in Sources */,
 				1345262E2FB30DC200BB4027 /* LoginView.swift in Sources */,
 				1355A8552FBF17B600E3F4F7 /* FinancialRowDetailComponent.swift in Sources */,
 				13528E962FB1C9DD00393303 /* MainRootView.swift in Sources */,
 				138F18DE2FCFFC6800BC19A1 /* PaymentViewModel.swift in Sources */,
+				130C5AF52FD17E300026AE25 /* InvestmentModel.swift in Sources */,
+				130C5AFA2FD1829D0026AE25 /* CalculatorViewModel.swift in Sources */,
 				13855C632FC06F1B003E3E36 /* mapView.swift in Sources */,
 				131FFAE92FB6E0AF000824AB /* AcceptTermsView.swift in Sources */,
 				13528E572FB1B6CE00393303 /* PropertyFinderApp.swift in Sources */,

@@ -13,24 +13,27 @@ struct ReceiptView: View {
     var body: some View {
         
         VStack(spacing: 24){
-            
-            receiptContent
-            
+
             ScrollView(showsIndicators: false){
-                FundingTimelineComponent()
-            }
-            
-            VStack(spacing:16){
-                ActionButton(title: "View investment portfolio", isPrimary: true, action: { viewModel.didTapViewPortfolio()})
                 
-                ActionButton(title: "Go to search", isPrimary: false, action: { viewModel.didTapGoToSearch()})
+                receiptContent
+                    .padding(.bottom, 8)
+                
+                FundingTimelineComponent()
+                
+                VStack(spacing:16){
+                    ActionButton(title: "View investment portfolio", isPrimary: true, action: { viewModel.didTapViewPortfolio()})
+                    
+                    ActionButton(title: "Go to search", isPrimary: false, action: { viewModel.didTapGoToSearch()})
+                }
+                
             }
-            
+
         }
         .padding(16)
         .navigationBarBackButtonHidden(true)
         .navigationDestination(isPresented: $viewModel.viewPortfolio){
-            InsightsView()
+            DashboardView()
         }.navigationDestination(isPresented: $viewModel.goToSearch){
             SearchView()
         }
@@ -58,7 +61,7 @@ extension ReceiptView {
                         
                         Spacer()
                         
-                        Text(viewModel.amountPaid)
+                        Text(viewModel.receipt.amountPaid)
                             .font(.subheadline)
                             .fontWeight(.regular)
                     }
@@ -70,7 +73,7 @@ extension ReceiptView {
                         
                         Spacer()
                         
-                        Text(viewModel.cashBackEarned)
+                        Text(viewModel.receipt.cashBackEarned)
                             .font(.subheadline)
                             .fontWeight(.regular)
                     }
@@ -82,7 +85,7 @@ extension ReceiptView {
                         
                         Spacer()
                         
-                        Text(viewModel.referenceNumber)
+                        Text(viewModel.receipt.referenceNumber)
                             .font(.subheadline)
                             .fontWeight(.regular)
                     }
@@ -94,7 +97,7 @@ extension ReceiptView {
                         
                         Spacer()
                         
-                        Text(viewModel.paymentMethod)
+                        Text(viewModel.receipt.paymentMethod)
                             .font(.subheadline)
                             .fontWeight(.regular)
                     }
