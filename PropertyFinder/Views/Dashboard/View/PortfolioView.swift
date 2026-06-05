@@ -17,7 +17,6 @@ struct PortfolioView: View {
             
             myInvestmentContent
         }
-        .padding(.horizontal, 16)
         .foregroundColor(Color.theme.primaryText)
     }
 }
@@ -72,7 +71,7 @@ extension PortfolioView {
             Text("My Investments")
                 .font(.title3).bold()
             
-            ForEach(portfolio.investments, id: \.title) { investment in
+            ForEach(portfolio.investments) { investment in
                 HStack(spacing: 12){
                     
                     Color.black.opacity(0.1).frame(width: 73, height: 73)

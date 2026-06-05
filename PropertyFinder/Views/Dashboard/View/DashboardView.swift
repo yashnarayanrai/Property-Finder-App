@@ -11,6 +11,7 @@ struct DashboardView: View {
     
     @StateObject private var viewModel = DashboardViewModel()
     
+    
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -23,11 +24,13 @@ struct DashboardView: View {
                     
                     selectOption
                     
-                    if viewModel.selectedTab == .portfolio {
+                    switch viewModel.selectedTab {
+                        
+                    case .portfolio:
                         PortfolioView(
                             portfolio: viewModel.portfolio
                         )
-                    } else {
+                    case .calculator:
                         CalculatorView()
                     }
 
@@ -35,6 +38,7 @@ struct DashboardView: View {
                     
                     accessFullPortfolio
                 }
+                .padding(16)
             }
         }
         .navigationBarBackButtonHidden()
@@ -47,12 +51,11 @@ extension DashboardView {
         
         VStack(alignment: .leading, spacing: 24){
             HStack(spacing: 12){
-                CapsuleButton(title: "Portfolio", action: { viewModel.showPortfolio() })
+                CapsuleButton(title: "Portfolio", action: { viewModel.selectTab(.portfolio) })
                 
-                CapsuleButton(title: "Calculator", action: { viewModel.showCalculator() })
+                CapsuleButton(title: "Calculator", action: { viewModel.selectTab(.calculator) })
             }
         }
-        .padding(16)
         .foregroundColor(Color.theme.primaryText)
         
     }
@@ -85,7 +88,6 @@ extension DashboardView {
                 ActionButton(title: "View investment opportunities", isPrimary: true, action: {})
             }
         }
-        .padding(16)
         .foregroundColor(Color.theme.primaryText)
         
     }
@@ -98,7 +100,6 @@ extension DashboardView {
             Image(systemName: "arrow.up.right.square")
         }
         .font(.body).bold()
-        .padding(.bottom, 16)
         .foregroundColor(Color.theme.primaryBlue)
         .frame(maxWidth: .infinity)
     }

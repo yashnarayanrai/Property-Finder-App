@@ -14,3 +14,11 @@ struct CalculatorModel {
     var projectedValue: Int
     var appreciation: Int
 }
+
+struct ProjectionData: Identifiable {
+    let id = UUID()
+    let year: Int
+    let value: Int
+    let lowerRange: Double
+    let upparRange: Double
+}

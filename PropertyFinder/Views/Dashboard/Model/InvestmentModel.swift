@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct InvestmentModel {
+struct InvestmentModel: Identifiable {
     let id = UUID()
     
     let title: String
