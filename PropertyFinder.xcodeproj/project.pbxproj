@@ -65,6 +65,14 @@
 		138F18DC2FCFFA7300BC19A1 /* AddCardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F18DB2FCFFA7300BC19A1 /* AddCardUseCase.swift */; };
 		138F18DE2FCFFC6800BC19A1 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F18DD2FCFFC6800BC19A1 /* PaymentViewModel.swift */; };
 		138F18E22FD006DA00BC19A1 /* ReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138F18E12FD006DA00BC19A1 /* ReceiptView.swift */; };
+		139F55CF2FD92EB900BFB65D /* ResquestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F55CE2FD92EB900BFB65D /* ResquestResponse.swift */; };
+		139F55D22FD9328C00BFB65D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F55D12FD9328C00BFB65D /* APIClient.swift */; };
+		139F55D42FD9343900BFB65D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F55D32FD9343900BFB65D /* AuthService.swift */; };
+		139F55D62FD9365700BFB65D /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F55D52FD9365700BFB65D /* RegisterViewModel.swift */; };
+		139F55DA2FD93C9200BFB65D /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F55D92FD93C9200BFB65D /* RegisterView.swift */; };
+		139F55DF2FD9435C00BFB65D /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F55DE2FD9435C00BFB65D /* LoginRequest.swift */; };
+		139F55E42FD943DE00BFB65D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F55E32FD943DE00BFB65D /* LoginViewModel.swift */; };
+		139F55E92FD956AB00BFB65D /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F55E82FD956AB00BFB65D /* KeychainManager.swift */; };
 		13A18D3E2FC42AA800409BA1 /* EmploymentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A18D3D2FC42AA800409BA1 /* EmploymentDetails.swift */; };
 		13A18D422FC4424300409BA1 /* SegmentedProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A18D412FC4424300409BA1 /* SegmentedProgressBar.swift */; };
 		13BD7E372FC02ADE00B1BBDB /* BeforeYouInvest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BD7E362FC02ADE00B1BBDB /* BeforeYouInvest.swift */; };
@@ -159,6 +167,14 @@
 		138F18DB2FCFFA7300BC19A1 /* AddCardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardUseCase.swift; sourceTree = "<group>"; };
 		138F18DD2FCFFC6800BC19A1 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 		138F18E12FD006DA00BC19A1 /* ReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptView.swift; sourceTree = "<group>"; };
+		139F55CE2FD92EB900BFB65D /* ResquestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResquestResponse.swift; sourceTree = "<group>"; };
+		139F55D12FD9328C00BFB65D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		139F55D32FD9343900BFB65D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		139F55D52FD9365700BFB65D /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		139F55D92FD93C9200BFB65D /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		139F55DE2FD9435C00BFB65D /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		139F55E32FD943DE00BFB65D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		139F55E82FD956AB00BFB65D /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		13A18D3D2FC42AA800409BA1 /* EmploymentDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmploymentDetails.swift; sourceTree = "<group>"; };
 		13A18D412FC4424300409BA1 /* SegmentedProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedProgressBar.swift; sourceTree = "<group>"; };
 		13BD7E362FC02ADE00B1BBDB /* BeforeYouInvest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeYouInvest.swift; sourceTree = "<group>"; };
@@ -242,7 +258,6 @@
 		1345262C2FB30DA900BB4027 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				1345262D2FB30DC200BB4027 /* LoginView.swift */,
 				13C88B302FB443CB002B5E64 /* CheckEmailView.swift */,
 				131FFAE82FB6E0AE000824AB /* AcceptTermsView.swift */,
 			);
@@ -298,8 +313,7 @@
 			children = (
 				13528E562FB1B6CE00393303 /* PropertyFinderApp.swift */,
 				13528E8D2FB1BF7A00393303 /* Core */,
-				13528E912FB1C80500393303 /* Views */,
-				13528E872FB1B7E100393303 /* Services */,
+				13528E912FB1C80500393303 /* Features */,
 				13528E882FB1B7FD00393303 /* Models */,
 				13528E862FB1B7BB00393303 /* ViewModels */,
 				13528E8A2FB1B87500393303 /* Resources */,
@@ -344,6 +358,7 @@
 		13528E872FB1B7E100393303 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				139F55D32FD9343900BFB65D /* AuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -372,6 +387,9 @@
 		13528E8D2FB1BF7A00393303 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				139F55E72FD94F2400BFB65D /* Security */,
+				139F55E62FD9474900BFB65D /* Networking */,
+				13528E872FB1B7E100393303 /* Services */,
 				134115142FB59811000DEE9A /* Components */,
 				13528E8E2FB1BF8100393303 /* Theme */,
 			);
@@ -386,9 +404,10 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
-		13528E912FB1C80500393303 /* Views */ = {
+		13528E912FB1C80500393303 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				139F55CD2FD92D3600BFB65D /* Authentication */,
 				131401C92FD1450C009756E2 /* Dashboard */,
 				138F18D42FCEE49E00BC19A1 /* Payment */,
 				134569632FBC7B9E00C2FD20 /* PLP */,
@@ -400,7 +419,7 @@
 				13528E9D2FB1D01100393303 /* InsightsView.swift */,
 				13528E9F2FB1D01E00393303 /* AccountView.swift */,
 			);
-			path = Views;
+			path = Features;
 			sourceTree = "<group>";
 		};
 		13528E932FB1C83400393303 /* Root */ = {
@@ -477,6 +496,59 @@
 				138F18E12FD006DA00BC19A1 /* ReceiptView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		139F55CD2FD92D3600BFB65D /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				139F55E22FD943C800BFB65D /* View Model */,
+				139F55E02FD943A700BFB65D /* Model */,
+				139F55E52FD9455700BFB65D /* View */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		139F55E02FD943A700BFB65D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				139F55CE2FD92EB900BFB65D /* ResquestResponse.swift */,
+				139F55DE2FD9435C00BFB65D /* LoginRequest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		139F55E22FD943C800BFB65D /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				139F55D52FD9365700BFB65D /* RegisterViewModel.swift */,
+				139F55E32FD943DE00BFB65D /* LoginViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		139F55E52FD9455700BFB65D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				139F55D92FD93C9200BFB65D /* RegisterView.swift */,
+				1345262D2FB30DC200BB4027 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		139F55E62FD9474900BFB65D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				139F55D12FD9328C00BFB65D /* APIClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		139F55E72FD94F2400BFB65D /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				139F55E82FD956AB00BFB65D /* KeychainManager.swift */,
+			);
+			path = Security;
 			sourceTree = "<group>";
 		};
 		13BD7E352FC02AA700B1BBDB /* Before you invest */ = {
@@ -663,6 +735,7 @@
 				138D8A762FC8256600010022 /* VerifyYourAddress.swift in Sources */,
 				13528EA02FB1D01E00393303 /* AccountView.swift in Sources */,
 				13E241682FD15EAA0067F96B /* DashboardView.swift in Sources */,
+				139F55DA2FD93C9200BFB65D /* RegisterView.swift in Sources */,
 				132460542FBEDB8F00DC67CB /* FinancialsComponent.swift in Sources */,
 				130C5AF82FD17EFA0026AE25 /* DashboardViewModel.swift in Sources */,
 				13544B002FBDABFE0062EEB7 /* InvestmentCalculatorComponent.swift in Sources */,
@@ -676,14 +749,21 @@
 				130C5AF32FD17DCF0026AE25 /* PortfolioModel.swift in Sources */,
 				134115182FB599DC000DEE9A /* ActionButton.swift in Sources */,
 				13528E9C2FB1D00100393303 /* ActivityView.swift in Sources */,
+				139F55DF2FD9435C00BFB65D /* LoginRequest.swift in Sources */,
 				138D8A742FC80A8500010022 /* UploadYourPassport.swift in Sources */,
+				139F55D42FD9343900BFB65D /* AuthService.swift in Sources */,
+				139F55E92FD956AB00BFB65D /* KeychainManager.swift in Sources */,
 				138F18DC2FCFFA7300BC19A1 /* AddCardUseCase.swift in Sources */,
 				13C88B312FB443CB002B5E64 /* CheckEmailView.swift in Sources */,
 				1346AE372FB1E65900A1F57F /* SearchHeaderView.swift in Sources */,
+				139F55D22FD9328C00BFB65D /* APIClient.swift in Sources */,
+				139F55D62FD9365700BFB65D /* RegisterViewModel.swift in Sources */,
 				1355A8572FBF188A00E3F4F7 /* CapitalGrowthComponent.swift in Sources */,
 				13544AFE2FBDAAE40062EEB7 /* PropertyDetails.swift in Sources */,
 				133732652FCD79DF00097882 /* PaymentView.swift in Sources */,
 				13105FCC2FD03C68007FABB4 /* ReceiptViewModel.swift in Sources */,
+				139F55CF2FD92EB900BFB65D /* ResquestResponse.swift in Sources */,
+				139F55E42FD943DE00BFB65D /* LoginViewModel.swift in Sources */,
 				130C5AF12FD17D500026AE25 /* CalculatorModel.swift in Sources */,
 				132460522FBEC49600DC67CB /* LeasingStrategyComponent.swift in Sources */,
 				13A18D3E2FC42AA800409BA1 /* EmploymentDetails.swift in Sources */,

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PropertyListView: View {
     
+    @State private var showRegisterView = false
     @State private var showLogin = false
     @State private var goToCheckEmail = false
     @State private var enteredEmail = ""
@@ -21,7 +22,7 @@ struct PropertyListView: View {
     
     @AppStorage("isUserLoggedIn") var isUserLoggedIn = false
     @AppStorage("isTermsAccepted") var isTermsAccepted = false
-    
+//    
 //    init() {
 //        // #if DEBUG ka matlab hai: Yeh code sirf tab chalega jab aap Xcode se Simulator par run karoge.
 //        // Jab aap app Store par live bhejoge, toh ye automatic band ho jayega.
@@ -30,7 +31,7 @@ struct PropertyListView: View {
 //        UserDefaults.standard.set(false, forKey: "isTermsAccepted")
 //        #endif
 //    }
-//    
+////    
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12){
@@ -166,15 +167,33 @@ struct PropertyListView: View {
             PropertyDetails()
         }
         
+        .navigationDestination(isPresented: $showRegisterView){
+            RegisterView(onRegisterSuccess: { email in
+                enteredEmail = email
+                
+                showRegisterView = false
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    showLogin = true
+                }
+            })
+        }
+        
         .sheet(isPresented: $showLogin){
-            LoginView { email in
-                self.enteredEmail = email
-                // Sheet band hone ke baad smoothly full screen call trigger hoga
+            LoginView(onLoginSuccess: {
+                
+                showLogin = false
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                    goToCheckEmail = true
+                }
+                
+            }, onRegisterTab: {
                 showLogin = false
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-                    self.goToCheckEmail = true
+                    showRegisterView = true
                 }
-            }
+            })
             .presentationDetents([.medium])
         }
     }

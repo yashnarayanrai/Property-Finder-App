@@ -216,13 +216,13 @@ extension CalculatorView {
     }
 }
 
-struct CalculatorView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalculatorView(data: [
-            .init(year: 1, value: 24000, lowerRange: 22000, upparRange: 26000),
-            .init(year: 5, value: 42000, lowerRange: 38000, upparRange: 47000),
-            .init(year: 10, value: 60000, lowerRange: 52000, upparRange: 70000),
-            .init(year: 15, value: 78000, lowerRange: 68000, upparRange: 92000)
-        ])
-    }
-}
+//struct CalculatorView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CalculatorView(data: [
+//            .init(year: 1, value: 24000, lowerRange: 22000, upparRange: 26000),
+//            .init(year: 5, value: 42000, lowerRange: 38000, upparRange: 47000),
+//            .init(year: 10, value: 60000, lowerRange: 52000, upparRange: 70000),
+//            .init(year: 15, value: 78000, lowerRange: 68000, upparRange: 92000)
+//        ])
+//    }
+//}

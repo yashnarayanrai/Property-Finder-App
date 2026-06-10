@@ -9,9 +9,11 @@ import SwiftUI
 
 struct LoginView: View {
 
-    let onEmailSent: (String) -> Void
-    @State private var isEmailSent = ""
-    @State private var email = ""
+    let onLoginSuccess: () -> Void
+    let onRegisterTab: () -> Void
+    
+    @StateObject private var vm = LoginViewModel()
+    
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
@@ -60,7 +62,7 @@ struct LoginView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 12))
                 
                 //                Email Input
-                TextField("Email Address", text: $email)
+                TextField("Email Address", text: $vm.email)
                     .keyboardType(.emailAddress)
                     .textInputAutocapitalization(.never)
                     .autocapitalization(.none)
@@ -68,18 +70,52 @@ struct LoginView: View {
                     .frame(maxWidth: .infinity)
                     .background(Color.theme.background)
                     .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.theme.gray.opacity(0.3), lineWidth: 1))
+                
+                SecureField("Password", text: $vm.password)
+                    .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.theme.gray.opacity(0.3), lineWidth: 1))
+                
+                HStack{
+                    Text("Don't have an account?")
+                    Spacer()
+                    Button(action: { onRegisterTab() }){
+                        Text("Register")
+                            .foregroundColor(Color.theme.primaryBlue)
+                            .underline()
+                    }
+                }
 
                 
                 ActionButton(title: "Go!", isPrimary: true, useDefaultNativePadding: true){
-                    dismiss()
                     
-                    onEmailSent(email)
+                    Task {
+                        await vm.login()
+                    }
+//                    dismiss()
                 }
-                .disabled(email.isEmpty)
+                .disabled(
+                    vm.isLoading ||
+                    vm.email.isEmpty ||
+                    vm.password.isEmpty
+                )
             }
-            
             .padding(.horizontal)
             .clipShape(RoundedRectangle(cornerRadius: 24))
+            .onChange(of: vm.isLoggedIn){ success in
+                if success{
+                    onLoginSuccess()
+                }
+            }
+            .alert("Error",
+                   isPresented: Binding(
+                get: { vm.errorMessage != nil },
+                set: { _ in vm.errorMessage = nil }
+                   )
+            ){
+                Button("Ok") {}
+            } message: {
+                Text(vm.errorMessage ?? "")
+            }
+            
         }
 //        .navigationDestination(isPresented: $isEmailSent) {
 //            CheckEmailView(email: email)
