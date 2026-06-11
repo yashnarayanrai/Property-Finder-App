@@ -59,6 +59,8 @@ final class LoginViewModel: ObservableObject {
             
             KeychainManager.shared.saveToken(response.accessToken)
             
+            UserDefaults.standard.set(true, forKey: "isTermAppected")
+            
             isLoggedIn =  true
         } catch {
             print(error)

@@ -73,6 +73,7 @@
 		139F55DF2FD9435C00BFB65D /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F55DE2FD9435C00BFB65D /* LoginRequest.swift */; };
 		139F55E42FD943DE00BFB65D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F55E32FD943DE00BFB65D /* LoginViewModel.swift */; };
 		139F55E92FD956AB00BFB65D /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F55E82FD956AB00BFB65D /* KeychainManager.swift */; };
+		139F55EB2FDA98E400BFB65D /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F55EA2FDA98E400BFB65D /* SplashView.swift */; };
 		13A18D3E2FC42AA800409BA1 /* EmploymentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A18D3D2FC42AA800409BA1 /* EmploymentDetails.swift */; };
 		13A18D422FC4424300409BA1 /* SegmentedProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A18D412FC4424300409BA1 /* SegmentedProgressBar.swift */; };
 		13BD7E372FC02ADE00B1BBDB /* BeforeYouInvest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BD7E362FC02ADE00B1BBDB /* BeforeYouInvest.swift */; };
@@ -175,6 +176,7 @@
 		139F55DE2FD9435C00BFB65D /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		139F55E32FD943DE00BFB65D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		139F55E82FD956AB00BFB65D /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		139F55EA2FDA98E400BFB65D /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		13A18D3D2FC42AA800409BA1 /* EmploymentDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmploymentDetails.swift; sourceTree = "<group>"; };
 		13A18D412FC4424300409BA1 /* SegmentedProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedProgressBar.swift; sourceTree = "<group>"; };
 		13BD7E362FC02ADE00B1BBDB /* BeforeYouInvest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeYouInvest.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 				1345262B2FB30C7500BB4027 /* Info.plist */,
 				13528E642FB1B6D100393303 /* Info.plist */,
 				1355A85A2FBF303000E3F4F7 /* Launch Screen.storyboard */,
+				139F55EA2FDA98E400BFB65D /* SplashView.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				13BD7E3A2FC033E600B1BBDB /* AccountSetUp.swift in Sources */,
 				13BD7E372FC02ADE00B1BBDB /* BeforeYouInvest.swift in Sources */,
 				13528E982FB1CFDF00393303 /* HomeView.swift in Sources */,
+				139F55EB2FDA98E400BFB65D /* SplashView.swift in Sources */,
 				1355A8512FBF03A400E3F4F7 /* ImageComponent.swift in Sources */,
 				130C5AF32FD17DCF0026AE25 /* PortfolioModel.swift in Sources */,
 				134115182FB599DC000DEE9A /* ActionButton.swift in Sources */,

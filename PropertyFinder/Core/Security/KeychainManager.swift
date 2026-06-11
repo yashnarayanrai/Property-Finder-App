@@ -49,4 +49,13 @@ final class KeychainManager {
         return String(data: data,
                       encoding: .utf8)
     }
+    
+    func deleteToken(){
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: "accessToken"
+        ]
+        
+        SecItemDelete(query as CFDictionary)
+    }
 }

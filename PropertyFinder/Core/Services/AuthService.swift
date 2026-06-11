@@ -15,6 +15,8 @@ protocol AuthServiceProtocal {
     func login(
         request: LoginRequest
     ) async throws -> LoginResponse
+    
+    func logout() async throws
 }
 
 struct APIErrorResponse: Codable {
@@ -70,5 +72,31 @@ final class AuthService: AuthServiceProtocal {
             urlRequest: urlRequest,
             responseType: LoginResponse.self
         )
+    }
+    
+    func logout() async throws {
+        
+        guard let url = URL(
+            string: "http://127.0.0.1:8000/logout"
+        ) else {
+            throw URLError(.badURL)
+        }
+        
+        guard let token = KeychainManager.shared.getToken() else {
+            return
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        
+        urlRequest.httpMethod = "POST"
+        
+        urlRequest.setValue(
+            "Bearer \(token ?? "")",
+            forHTTPHeaderField: "Authorization"
+        )
+        
+        _ = try await URLSession.shared.data(for: urlRequest)
+        
+        KeychainManager.shared.deleteToken()
     }
 }

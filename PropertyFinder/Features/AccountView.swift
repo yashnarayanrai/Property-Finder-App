@@ -9,7 +9,21 @@ import SwiftUI
 
 struct AccountView: View {
     var body: some View {
-        Text("Hello, Account")
+        VStack{
+            Text("Hello, Account")
+            Spacer()
+            ActionButton(title: "Logout", isPrimary: true, action: {
+                
+                Task {
+                    do {
+                        try await AuthService().logout()
+                    } catch {
+                        print(error)
+                    }
+                }
+            })
+        }
+        .padding()
     }
 }
 

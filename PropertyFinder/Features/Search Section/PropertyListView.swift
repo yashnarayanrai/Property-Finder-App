@@ -18,10 +18,22 @@ struct PropertyListView: View {
     @Environment(\.dismiss) var dismiss
 //    @Environment(\.currentAppPhase) var appPhase
     @Environment(\.scenePhase) private var scenePhase
+   
     
     
-    @AppStorage("isUserLoggedIn") var isUserLoggedIn = false
     @AppStorage("isTermsAccepted") var isTermsAccepted = false
+    
+    private var isUserLoggedIn: Bool {
+        KeychainManager.shared.getToken() != nil
+      
+    }
+    
+//    func logout() {
+//
+//        KeychainManager.shared.deleteToken()
+//
+//    }
+    
 //    
     init() {
         // #if DEBUG ka matlab hai: Yeh code sirf tab chalega jab aap Xcode se Simulator par run karoge.
@@ -30,8 +42,9 @@ struct PropertyListView: View {
         UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
         UserDefaults.standard.set(false, forKey: "isTermsAccepted")
         #endif
+        
     }
-//    
+//
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12){
@@ -116,7 +129,7 @@ struct PropertyListView: View {
                 
 
                 
-            } else{
+            } else {
                 Button(action: {
                     showLogin = true
                 }) {
@@ -177,6 +190,12 @@ struct PropertyListView: View {
                     showLogin = true
                 }
             })
+        }
+        
+        .onAppear{
+            print("Token:", KeychainManager.shared.getToken() ?? "No Found")
+            
+            print("Terms::",isTermsAccepted)
         }
         
         .sheet(isPresented: $showLogin){

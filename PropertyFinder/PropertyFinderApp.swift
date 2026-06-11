@@ -19,10 +19,12 @@ struct PropertyFinderApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainRootView()
+            SplashView()
+                
             //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
             //                .environment(\.currentAppPhase, scenePhase)
         }
+        
         .onChange(of: scenePhase) { newPhase in
             switch newPhase {
             case .active:
