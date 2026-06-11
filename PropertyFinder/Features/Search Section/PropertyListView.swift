@@ -23,15 +23,15 @@ struct PropertyListView: View {
     @AppStorage("isUserLoggedIn") var isUserLoggedIn = false
     @AppStorage("isTermsAccepted") var isTermsAccepted = false
 //    
-//    init() {
-//        // #if DEBUG ka matlab hai: Yeh code sirf tab chalega jab aap Xcode se Simulator par run karoge.
-//        // Jab aap app Store par live bhejoge, toh ye automatic band ho jayega.
-//        #if DEBUG
-//        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
-//        UserDefaults.standard.set(false, forKey: "isTermsAccepted")
-//        #endif
-//    }
-////    
+    init() {
+        // #if DEBUG ka matlab hai: Yeh code sirf tab chalega jab aap Xcode se Simulator par run karoge.
+        // Jab aap app Store par live bhejoge, toh ye automatic band ho jayega.
+        #if DEBUG
+        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+        UserDefaults.standard.set(false, forKey: "isTermsAccepted")
+        #endif
+    }
+//    
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12){

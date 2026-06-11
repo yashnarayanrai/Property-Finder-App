@@ -57,15 +57,11 @@ final class LoginViewModel: ObservableObject {
             print("Login Success")
             print(response)
             
-//            UserDefaults.standard.set(
-//                response.accessToken,
-//                forKey: "accessToken"
-//            )
-            
             KeychainManager.shared.saveToken(response.accessToken)
             
             isLoggedIn =  true
         } catch {
+            print(error)
             errorMessage = error.localizedDescription
         }
     }

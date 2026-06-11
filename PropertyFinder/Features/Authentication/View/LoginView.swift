@@ -90,12 +90,9 @@ struct LoginView: View {
                     Task {
                         await vm.login()
                     }
-//                    dismiss()
                 }
                 .disabled(
-                    vm.isLoading ||
-                    vm.email.isEmpty ||
-                    vm.password.isEmpty
+                    vm.isLoading
                 )
             }
             .padding(.horizontal)

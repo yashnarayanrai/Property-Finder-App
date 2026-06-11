@@ -17,6 +17,9 @@ protocol AuthServiceProtocal {
     ) async throws -> LoginResponse
 }
 
+struct APIErrorResponse: Codable {
+    let detail: String
+}
 
 final class AuthService: AuthServiceProtocal {
     func register(request: RegisterRequest) async throws -> RegisterResponse {
